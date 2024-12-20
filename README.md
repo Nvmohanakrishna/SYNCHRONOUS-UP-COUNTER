@@ -26,21 +26,52 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
+**TRUTH TABLE**
+
+
+![WhatsApp Image 2024-12-21 at 01 54 48_38920ac2](https://github.com/user-attachments/assets/a1611457-5af8-4a9e-b377-a4702ef22644)
+
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+
+Developed by: N V MOHANA KRISHNA
+
+RegisterNumber:24000587
 */
-
+```
+module ex11(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+```
 **RTL LOGIC UP COUNTER**
+![upcounterrtl](https://github.com/user-attachments/assets/f6e066f4-f94a-4aca-a004-2c8e4ed9a450)
 
-**TIMING DIAGRAM FOR IP COUNTER**
+**TIMING DIAGRAM FOR UP COUNTER**
 
-**TRUTH TABLE**
+
+![upcountercircuit](https://github.com/user-attachments/assets/7b9fc29e-695b-41ff-8b96-a2f5e64152b4)
 
 **RESULTS**
+BY UPCOUNTER EXPERIMENT I GOT RTL AND TIMING DIAGRAM
